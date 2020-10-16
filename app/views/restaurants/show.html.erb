@@ -18,6 +18,8 @@
 <% @restaurant.reviews.each do |review| %>
   <p> <%=  review.content %> </p>
   <p> <%=  '⭐' * review.rating %> </p>
+  <%= link_to 'delete', review_path(review), method: :delete %>
+  <%= link_to 'edit', edit_review_path(review) %>
   <hr>
 <% end %>
 <%= link_to 'Back', restaurants_path %> |

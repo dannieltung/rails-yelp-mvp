@@ -1,0 +1,9 @@
+<h1>edit page!</h1>
+<%= simple_form_for [@review] do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <%= f.input :content %>
+  <%= f.input :rating %>
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>
+<%= link_to 'Back', restaurants_path %>
